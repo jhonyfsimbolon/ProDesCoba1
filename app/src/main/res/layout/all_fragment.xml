@@ -187,9 +187,36 @@
         </RelativeLayout>
 
         <View style="@style/Divider"/>
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/terbaruText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produk Terbaru"
+            android:textSize="25sp"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
+
+        <com.unri.mobile.prodescoba1.ExpandableHeightGridView
+            android:id="@+id/gridViewBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:numColumns="2"
+            android:verticalSpacing="15dp"
+            android:horizontalSpacing="15dp"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            />
+
         <View style="@style/Divider"/>
         <View style="@style/Divider"/>
         <View style="@style/Divider"/>
+        <View style="@style/Divider"/>
+        <View style="@style/Divider"/>
+
 
     </LinearLayout>
 </ScrollView>

@@ -1,14 +1,17 @@
 package com.unri.mobile.prodescoba1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.tabs.TabLayout;
 import com.unri.mobile.prodescoba1.Adapter.GridAdapter;
+import com.unri.mobile.prodescoba1.Adapter.GridBarangAdapter;
 import com.unri.mobile.prodescoba1.Adapter.RekomendasiImageAdapter;
 
 import androidx.annotation.NonNull;
@@ -18,7 +21,8 @@ import androidx.viewpager.widget.ViewPager;
 
 public class FragmentAll extends Fragment {
 
-    GridView gridView;
+    GridView gridViewKategori;
+    ExpandableHeightGridView gridViewBarang;
     private int[] mImageId = new int[]{R.drawable.air, R.drawable.pantai, R.drawable.rumah};
     private String [] text = new String[] {"Wisata", "Kuliner", "Kriya", "Lainnya"};
 
@@ -38,7 +42,9 @@ public class FragmentAll extends Fragment {
         ViewPager viewPagerRekomendasi = (ViewPager) view.findViewById(R.id.rekomenBanner);
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         TabLayout tabLayoutRekomendasi = (TabLayout) view.findViewById(R.id.tabLayoutRekomendasi);
-        gridView = (GridView) view.findViewById(R.id.grid_view);
+        gridViewKategori = (GridView) view.findViewById(R.id.grid_view);
+        gridViewBarang = (ExpandableHeightGridView) view.findViewById(R.id.gridViewBarang);
+
         //dotsLayout = (RelativeLayout) view.findViewById(R.id.layoutDots);
 
         //Implementasi ViewPager Banner
@@ -51,7 +57,16 @@ public class FragmentAll extends Fragment {
         tabLayout.setupWithViewPager(viewPagerBanner);
 
         //Implementasi Gridview Kategori
-        gridView.setAdapter(new GridAdapter(getActivity(), text));
+        gridViewKategori.setAdapter(new GridAdapter(getActivity(), text));
+        gridViewKategori.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 4) {
+                    Intent i = new Intent(getActivity(), KategoriActivity.class);
+                    startActivity(i);
+                }
+            }
+        });
 
         //Implementasi ViewPager Banner
         viewPagerRekomendasi.setClipToPadding(false);
@@ -61,6 +76,12 @@ public class FragmentAll extends Fragment {
         RekomendasiImageAdapter rekomendasiImageAdapter = new RekomendasiImageAdapter(getActivity(), namaBarang, hargabarang, imageBarang);
         viewPagerRekomendasi.setAdapter(rekomendasiImageAdapter);
         tabLayoutRekomendasi.setupWithViewPager(viewPagerRekomendasi);
+
+        //Implementasi gridview Barang
+        gridViewBarang.setExpanded(true);
+        GridBarangAdapter adapterBarang = new GridBarangAdapter(getActivity(), namaBarang, deskripsiBarang, hargabarang, imageBarang);
+        adapterBarang.notifyDataSetChanged();
+        gridViewBarang.setAdapter(adapterBarang);
 
         return view;
     }
