@@ -74,9 +74,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kuliner Maknyus Gais"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:text="Toko Serba Ada, bisa cicil juga gan!"
+        android:paddingStart="15dp"
+        android:paddingEnd="85dp"
         android:textSize="15sp"
         android:layout_marginTop="3dp"/>
 
@@ -103,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="4"
                 android:textColor="@android:color/black"
                 android:textSize="19sp"
                 android:textStyle="bold" />
@@ -125,7 +125,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="19"
                 android:textColor="@android:color/black"
                 android:textSize="19sp"
                 android:textStyle="bold" />
@@ -144,4 +144,31 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/bg_follower"/>
 
+
+    <TextView
+        android:layout_alignParentLeft="true"
+        android:id="@+id/terbaruText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar Produk"
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"/>
+    <View style="@style/Divider"/>
+
+<!--    <com.unri.mobile.prodescoba1.ExpandableHeightGridView-->
+<!--        android:id="@+id/profile_gridViewBarang"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:numColumns="3"-->
+<!--        android:verticalSpacing="10dp"-->
+<!--        android:horizontalSpacing="5dp"-->
+<!--        android:gravity="center"-->
+<!--        android:stretchMode="columnWidth"-->
+<!--        />-->
+
+    <View style="@style/Divider"/>
 </LinearLayout>
