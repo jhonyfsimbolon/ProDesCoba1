@@ -15,7 +15,7 @@
         android:background="@color/colorPrimaryDark">
 
         <Button
-            android:id="@+id/btn_back_setting"
+            android:id="@+id/btn_back_selling"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_centerVertical="true"
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/btn_back_setting"
+            android:layout_toRightOf="@+id/btn_back_selling"
             android:text="Form Penjualan"
             android:textColor="@android:color/white"
             android:textStyle="bold"
@@ -44,7 +44,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:gravity="center"
-            android:layout_margin="20dp"
+            android:layout_margin="25dp"
             android:background="@drawable/upload_foto"
             android:orientation="vertical"
             android:clickable="true"
@@ -60,25 +60,40 @@
                 android:text="Tambah Foto"/>
         </LinearLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:hint="Nama Produk*"/>
+            app:counterEnabled="true"
+            android:layout_marginBottom="10dp"
+            app:counterMaxLength="250">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:maxLength="250"
+                android:hint="Nama Produk*"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:hint="Deskripsi Produk*"/>
+            app:counterEnabled="true"
+            android:layout_marginBottom="10dp"
+            app:counterMaxLength="10000">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:maxLength="10000"
+                android:hint="Deskripsi Produk*"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:layout_width="match_parent"
@@ -97,6 +112,7 @@
             android:layout_marginRight="15dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:inputType="number"
             android:layout_marginBottom="20dp"
             android:hint="Harga"/>
 
@@ -106,6 +122,7 @@
             android:layout_gravity="center"
             android:text="Simpan"
             android:textColor="#fff"
+            android:layout_margin="15dp"
             android:textSize="18dp"
             android:background="@drawable/rounded_save"/>
     </LinearLayout>

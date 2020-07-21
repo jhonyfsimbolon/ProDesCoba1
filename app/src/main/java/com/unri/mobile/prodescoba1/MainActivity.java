@@ -67,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this,SellingFormActivity.class);
                 startActivity(i);
+                findViewById(R.id.btn_x).setVisibility(View.GONE);
+                findViewById(R.id.bgplus).setVisibility(View.GONE);
+                findViewById(R.id.btn_jual).setVisibility(View.GONE);
+                findViewById(R.id.btn_plus).setVisibility(View.VISIBLE);
             }
         });
         BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
