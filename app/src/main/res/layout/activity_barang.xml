@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ActivityBarang">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/judul_bar_barang"
+            android:layout_height="50dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimaryDark">
+
+            <Button
+                android:id="@+id/btn_back_barang"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_back"/>
+
+            <TextView
+                android:id="@+id/namaBarang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_share_myprofile"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_toLeftOf="@+id/btn_more_setting"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_share"/>
+
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageBarang"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/judul_bar_barang"/>
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/layout_judul_barang"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded"
+            >
+
+            <TextView
+                android:id="@+id/waktu_upload_barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="diunggh 2 bulan yang lalu"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_below="@id/waktu_upload_barang"
+                android:id="@+id/nama_barang"
+                android:layout_width="300dp"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="Nama Barang yang Akan Ditampilkan"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/text_status_barang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_judul_barang"
+            android:text="User"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_profile_barang"
+            android:layout_below="@id/text_status_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profile_barang"
+                android:layout_width="55dp"
+                android:layout_margin="5dp"
+                android:layout_height="55dp"
+                android:src="@drawable/profile"/>
+
+            <RelativeLayout
+                android:layout_toLeftOf="@id/layout_wa_barang"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_discuss_barang"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_chat"
+                    android:background="@drawable/grid_item"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/text_discussion_barang"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/image_discuss_barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="no discussion"
+                    android:textSize="8sp"
+                    android:layout_centerHorizontal="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_wa_barang"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="15dp">
+
+                <ImageView
+                    android:id="@+id/image_wa_barang"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_chat"
+                    android:background="@drawable/grid_item"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/text_wa_barang"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/image_wa_barang"
+                    android:textSize="8sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chat Whatsapp"
+                    android:layout_centerHorizontal="true"
+                    />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View style="@style/Divider"
+            android:layout_below="@id/layout_profile_barang"/>
+
+        <LinearLayout
+            android:id="@+id/layout_deskripsi_barang"
+            android:layout_margin="15dp"
+            android:layout_below="@id/layout_profile_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <TextView
+                android:id="@+id/deskripsi_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textSize="15sp"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+
+
+        </LinearLayout>
+
+        <View style="@style/Divider"
+            android:layout_below="@id/layout_deskripsi_barang"/>
+
+        <LinearLayout
+            android:id="@+id/layout_kategori_barang"
+            android:layout_margin="15dp"
+            android:layout_below="@id/layout_deskripsi_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <TextView
+                android:id="@+id/kategori_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kategori"
+                android:textSize="15sp"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+
+
+        </LinearLayout>
+
+        <View style="@style/Divider"
+            android:layout_below="@id/layout_kategori_barang"/>
+
+        <LinearLayout
+            android:id="@+id/layout_lokasi_barang"
+            android:layout_margin="15dp"
+            android:layout_below="@id/layout_kategori_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lokasi"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <TextView
+                android:id="@+id/lokasi_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lokasi"
+                android:textSize="15sp"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                tools:context=".ActivityBarang"/>
+
+        </LinearLayout>
+
+        <View style="@style/Divider"
+            android:layout_below="@id/layout_lokasi_barang"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

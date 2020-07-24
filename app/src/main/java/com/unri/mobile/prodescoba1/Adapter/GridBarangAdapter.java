@@ -30,7 +30,7 @@ public class GridBarangAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return namaBarang.length;
     }
 
     @Override

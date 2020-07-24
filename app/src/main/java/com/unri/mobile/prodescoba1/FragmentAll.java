@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.unri.mobile.prodescoba1.Adapter.GridAdapter;
@@ -28,10 +29,30 @@ public class FragmentAll extends Fragment {
 
     //Array Barang Sementara
 
-    private String [] namaBarang = new String[]{"Mobil Mr. Beast", "Kursi Pewdiepie", "Sepeda Gunung Viral", "Motor Bebek"};
-    private String [] hargabarang = new String[]{"200.000", "3.990.000", "2.500.000", "9.500.000"};
-    private String [] deskripsiBarang = new String[]{"Mobil Mr. Beast yang dikasih Youtuber lain", "Floor Gang Oughh", "Ngapain Viral2 Woyy", "Motor kok bebek??"};
-    private int [] imageBarang = new int[]{R.drawable.mobilmrbeast, R.drawable.kursi, R.drawable.sepeda, R.drawable.motorbebek};
+    private String [] namaBarang = new String[]{"Gayung Batok Kelapa Asli",
+            "Kerajinan Sendal",
+            "Dudung Ikan Enak",
+            "Pupuk Kiloan",
+            "Sabun Cuci Tangan Berbahan Alami",
+            "Kaos Rute Desa",
+            "Benang Tenun"};
+    private String [] hargabarang = new String[]{"20.000", "39.000", "50.000", "5.000", "20.000", "80.000", "20.000"};
+    private String [] deskripsiBarang = new String[]{"Gayung tradisional yang terbuat dari batok kelapa. Bahan berkualitas dan awet"
+            ,"Sendal terbaru dari kerajinan anyaman yang stylish dan nyaman dikenakan sehari - hari"
+            ,"Dudung ikan asli tanpa bahan pengawet dan pewarna, nikmat untuk disantap bersama keluarga"
+            ,"Pupuk yang dapat menyuburkan tanaman dan tentunya organik tanpa bahan kimia berbahaya",
+            "Sabun cuci tangan anti Corona yang berbahan alami dan tentunya halal untuk digunakan"
+            ,"Kaos keren dengan cetakan Rute desa. Sablon rapi dan berkualitas, tidak mudah lepas saat dicuci",
+            "Benang tenun yang tahan lama, kuat dan mudah digunakan. memiliki berbagai pilihan warna menarik"
+    };
+    private int [] imageBarang = new int[]{R.drawable.gayng_batok,
+            R.drawable.kereajinan_sendakl,
+            R.drawable.dudung_ikan,
+            R.drawable.pupuk,
+            R.drawable.sabun_cuci_tangan,
+            R.drawable.kaos_rute_desa,
+            R.drawable.benang_alami
+    };
 
     @Nullable
     @Override
@@ -61,9 +82,11 @@ public class FragmentAll extends Fragment {
         gridViewKategori.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 4) {
+                if (position == 3) {
                     Intent i = new Intent(getActivity(), KategoriActivity.class);
                     startActivity(i);
+                }else{
+                    Toast.makeText(getActivity(),  String.valueOf(position), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -73,15 +96,28 @@ public class FragmentAll extends Fragment {
         viewPagerRekomendasi.setPadding(0, 0, 175, 0);
         viewPagerRekomendasi.setPageTransformer(true, new ZoomOutPageTransformer());
 
+        //Implementas  Rekomendasi BArnag
         RekomendasiImageAdapter rekomendasiImageAdapter = new RekomendasiImageAdapter(getActivity(), namaBarang, hargabarang, imageBarang);
         viewPagerRekomendasi.setAdapter(rekomendasiImageAdapter);
         tabLayoutRekomendasi.setupWithViewPager(viewPagerRekomendasi);
+
 
         //Implementasi gridview Barang
         gridViewBarang.setExpanded(true);
         GridBarangAdapter adapterBarang = new GridBarangAdapter(getActivity(), namaBarang, deskripsiBarang, hargabarang, imageBarang);
         adapterBarang.notifyDataSetChanged();
         gridViewBarang.setAdapter(adapterBarang);
+
+        gridViewBarang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getActivity(), ActivityBarang.class);
+                i.putExtra("position", position);
+                startActivity(i);
+            }
+        });
+
+
 
         return view;
     }
